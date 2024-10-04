@@ -1,21 +1,55 @@
 <!DOCTYPE html>
- <html>
- <head>
- <title>WEB1 - WEB </title>
- <meta charset="utf-8">
- </head>
- <body>
- <h1>이상화 홈페이지</h1>
- <h2>자주가는 홈페이지</h2>
- <div style="margin: 30px 0px 30px 0px;">
- <a href="https://www.naver.com" style="margin: 0px 50px 0 50px;"><img style="border-radius: 20px;" src="naverlogo.png" width="200px"></a>
- <a href="https://www.google.com" style="margin: 0px 50px 0 50px;"><img style="border-radius: 20px;" src="googlelogo.png" width="200px"></a>
- <a href="https://www.youtube.com" style="margin: 0px 50px 0 50px;"><img style="border-radius: 20px;" src="youtubelogo.png" width="200px"></a>
- </div>
- <ol>
- <li><a href="1.html">HTML</a></li>
- <li><a href="2.html">CSS</a></li>
- <li><a href="3.html">JavaScript</a></li>
- </ol>
- </body>
- </html>
+<html>
+
+<head>
+    <title>WEB1 - WEB </title>
+    <meta charset="utf-8">
+    <style>
+        a {
+            text-decoration: none;
+            /**/
+            font-size: 30px;
+            font-style: italic;
+            /*폰트 기울이기*/
+            color: black;
+        }
+
+        h1 {
+            border-bottom: 1px solid gray;
+            font-size: 45px;
+            text-align: center;
+        }
+
+        /* class: . */
+        /*    id: # */
+        #saw {
+            color: red;
+        }
+
+        .sctive {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><a href="index.html">이상화 홈페이지</a></h1>
+    <h2>자주가는 홈페이지</h2>
+    <div style="margin: 30px 0px 30px 0px;">
+        <a href="https://www.naver.com" style="margin: 0px 50px 0 50px;"><img style="border-radius: 20px;"
+                src="naverlogo.png" width="200px"></a>
+        <a href="https://www.google.com" style="margin: 0px 50px 0 50px;"><img style="border-radius: 20px;"
+                src="googlelogo.png" width="200px"></a>
+        <a href="https://www.youtube.com" style="margin: 0px 50px 0 50px;"><img style="border-radius: 20px;"
+                src="youtubelogo.png" width="200px"></a>
+    </div>
+    <ol>
+        <li><a href="1.html" class="saw">HTML</a></li>
+        <!--하나의 태그에 효과가 다른 두 클래스르 중첩하면 style순서가 아랫부분이 우선순위가 높다.-->
+        <li><a href="2.html" class="sctive saw">CSS</a></li>
+        <!--우선순위 id 선택자>class 선택자>태그 선택자-->
+        <li><a href="3.html" class="sctive" id="saw">JavaScript</a></li>
+    </ol>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+/* 전체 페이지의 기본 스타일 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 화면 전체를 채우도록 설정 */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ccc, #333); /* 그라데이션 효과 */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 페이지의 모든 내용이 최소 화면 전체를 차지하도록 설정 */
+main {
+    flex-grow: 1;
+}
+
+/* 헤더 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid #555; /* 헤더 하단 줄 */
+    background-color: #f5f5f5;
+}
+
+/* 좌측 상단 메인 아이콘 */
+.main-logo {
+    display: flex;
+    align-items: center;
+}
+
+.main-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+/* 우측 상단 회원가입, 로그인, 사용자 아이콘 */
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-actions button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.user-actions button:hover {
+    background-color: #777;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #555;
+}
+
+/* 검색창 스타일 */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 200px 0px 50px 0px; /* 더 아래에 배치 */
+}
+
+.search-bar input {
+    width: 50%;
+    padding: 15px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    border-radius: 50%;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-btn:hover {
+    background-color: #777;
+}
+
+/* 최근 게시글 박스 */
+.recent-posts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개 열로 나눔 */
+    gap: 20px; /* 박스 사이 간격 */
+    padding: 0px;
+    margin: 100px 10px 100px 10px; /* 페이지 하단과의 간격 추가 */
+}
+
+.post-box {
+    background-color: white;
+    width: 250px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
