@@ -31,6 +31,7 @@ header {
 .main-logo {
     display: flex;
     align-items: center;
+    border-radius: 20px;
 }
 
 .main-logo img {
@@ -101,14 +102,77 @@ header {
     grid-template-columns: repeat(4, 1fr); /* 4개 열로 나눔 */
     gap: 20px; /* 박스 사이 간격 */
     padding: 0px;
-    margin: 100px 10px 100px 10px; /* 페이지 하단과의 간격 추가 */
+    margin: 100px 10px 100px 10px; 
 }
 
 .post-box {
     background-color: white;
-    width: 250px;
-    height: 300px;
+    width: 90%;
+    height: 90%; 
     padding: 10px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* 로그인/회원가입 공통 스타일 */
+.auth-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%; /* 입력 필드를 100% 너비로 설정 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* 패딩과 보더를 포함한 크기 조정 */
+}
+
+.auth-btn {
+    width: 100%; /* 버튼의 너비를 100%로 설정 */
+    padding: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.auth-btn:hover {
+    background-color: #777;
+}
+
+.auth-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth-container a {
+    color: #555;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
