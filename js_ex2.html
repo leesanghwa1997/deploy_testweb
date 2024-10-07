@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Comparison operators & Boolean</h1>
+    <h2>1===1</h2>
+    <script>
+        document.write(1 === 1);
+    </script>
+
+    <h3>1===2</h3>
+    <script>
+        document.write(1 === 2);
+    </script>
+
+    <h3>1&lt;2</h3>
+    <script>
+        document.write(1 < 2);
+    </script>
+    <h3>2&lt;1</h3>
+    <script>
+        document.write(2 < 1);
+    </script>
+    <h1> Array </h1>
+    <h2>Syntax</h2>
+    <script>
+        var coworkers = ["egoing", "leezche"];
+    </script>
+    <h2>get</h2>
+    <script>
+        document.write(coworkers[0]);
+        document.write(coworkers[1]);
+    </script>
+    <h2>add</h2>
+    <script>
+        coworkers.push('duru');
+        coworkers.push('taeho');
+    </script>
+
+    <h2>count</h2>
+    <script>
+        document.write(coworkers.length);
+    </script>
+    <h2>2, 3번째 코드 3번 반복</h2>
+    <script>
+        document.write('<li>1</li>');
+        var i = 0;
+        while (i < 3) {
+            document.write('<li>2</li>');
+            document.write('<li>3</li>');
+            i = i + 1;
+        }
+        document.write('<li>4</li>');
+    </script>
+    <h2>Coworkers3</h2>
+    <ul>
+        <script>
+            var coworkers = ["egoing", "leezche", "duru", "taeho"];
+            var i = 0;
+            while (i < 4) {
+                document.write('<li>' + coworkers[i] + '</li>');
+                i = i + 1;
+            }
+        </script>
+    </ul>
+</body>
+
+</html>

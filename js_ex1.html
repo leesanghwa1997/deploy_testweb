@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write("hi")
+    </script>
+
+    <h1>JavaScript</h1>
+    <script>
+        document.write(1 + 1);
+    </script>
+    <h1>html</h1>
+    1+1
+    <div>
+        <input type="button" value="hi" onclick="alert('hihihihi')">
+    </div>
+    <input type="text" onchange="alert('changed')">
+    <input id="test1" placeholder="Click here, then press down a key." size="40" />
+    <p id="log"></p>
+    <script>
+        const input = document.querySelector("#test1");
+        const log = document.getElementById("log");
+
+        input.addEventListener("keydown", logKey);
+
+        function logKey(e) {
+            log.textContent += ` ${e.code}`;
+        }
+
+    </script>
+    <div><input type="text" placeholder="ID" id="userid"></div>
+    <div><input type="text" placeholder="PASSWORD" id="userpassword"></div>
+    <div><input type="button" value="Login" id="loginButton" onclick="loginButtonClick()"></div>
+    <p id="idlog"></p>
+    <script>
+        function loginButtonClick() {
+            var userid = document.getElementById('userid').value;
+            var userpassword = document.getElementById('userpassword').value;
+            const idlog = document.getElementById("idlog");
+            idlog.textContent = 'ID: ' + userid + '\nPassword: ' + userpassword
+            //alert('ID: ' + userid + '\nPassword: ' + userpassword);
+        }
+        // document.getElementById('loginButton').addEventListener("click", function () {
+        //     var userid = document.getElementById('userid').value;
+        //     var userpassword = document.getElementById('userpassword').value;
+        //     alert('ID: ' + userid + '\nPassword: ' + userpassword);
+        // });
+    </script>
+    <div><input type="text" placeholder="먹고싶은 음식" id="wantfood"></div>
+    <div><input type="button" value="출력" onclick="foodButton()"></div>
+    <h1 id="foodlog"></h1>
+    <script>
+        function foodButton() {
+            var wantfood = document.getElementById('wantfood').value;
+            document.getElementById("foodlog").innerText = '먹고싶은 메뉴:' + wantfood;
+        }
+    </script>
+</body>
+
+</html>
