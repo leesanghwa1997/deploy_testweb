@@ -4,139 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹사이트 샘플</title>
-    <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100%;
-            background: linear-gradient(to bottom, #87CEFA, #E0FFFF);
-            box-sizing: border-box;
-        }
-
-        /* 헤더 */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #87CEFA;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #ddd;
-            /* 하단 구분선 */
-        }
-
-        .menu-icon {
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .header-buttons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-right: 30px;
-            /* 버튼과 아이콘 간격을 충분히 확보 */
-        }
-
-        .header-buttons button {
-            padding: 5px 15px;
-            background-color: white;
-            border: 1px solid #ddd;
-            /* 버튼 구분선 */
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .profile-icon {
-            font-size: 20px;
-            cursor: pointer;
-            padding: 5px 10px;
-            background-color: white;
-            border: 1px solid #ddd;
-            /* 프로필 아이콘 구분선 */
-            border-radius: 5px;
-        }
-
-        /* 메뉴 */
-        .side-menu {
-            position: fixed;
-            left: -250px;
-            top: 0;
-            width: 250px;
-            height: 100%;
-            background-color: #87CEFA;
-            transition: left 0.3s ease;
-            border-right: 1px solid #ddd;
-            /* 메뉴 구분선 */
-        }
-
-        .side-menu ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 60px;
-        }
-
-        .side-menu ul li {
-            cursor: pointer;
-            padding: 10px;
-            border: 1px solid #ddd;
-            /* 메뉴 항목 구분선 */
-            background-color: 87CEFA;
-            /* border-radius: 5px; */
-        }
-
-        .content {
-            margin-top: 80px;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-            /* 바디 상단 구분선 */
-        }
-
-        /* 푸터 */
-        footer {
-            background-color: #87CEFA;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            border-top: 1px solid #ddd;
-            /* 푸터 상단 구분선 */
-        }
-
-        .footer-text {
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
+    <title>이상화 웹사이트</title>
 </head>
 
 <body>
 
     <header>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <div class="header-buttons">
-            <button onclick="alert('회원가입 클릭')">회원가입</button>
-            <button onclick="alert('로그인 클릭')">로그인</button>
-            <div class="profile-icon">👤</div>
+        <!-- 우측 회원가입/로그인 버튼 및 사용자 아이콘 -->
+        <div class="user-actions">
+            <button id="signup-btn" onclick="goToSignup()">회원가입</button>
+            <button id="login-btn" onclick="goToLogin()">로그인</button>
+            <div class="user-icon"></div>
         </div>
+        <script>
+            // 로그인 버튼 클릭 시 login.html로 이동
+            function goToLogin() {
+                window.location.href = "login.html";
+            }
+
+            // 회원가입 버튼 클릭 시 signup.html로 이동
+            function goToSignup() {
+                window.location.href = "sign_up.html";
+            }
+        </script>
     </header>
 
     <!-- 왼쪽 메뉴 -->
-    <div class="side-menu" id="sideMenu">
+    <aside class="menu" id="sideMenu">
         <ul>
-            <li onclick="showContent('메뉴 1')">메뉴 1</li>
-            <li onclick="showContent('메뉴 2')">메뉴 2</li>
-            <li onclick="showContent('메뉴 3')">메뉴 3</li>
-            <li onclick="showContent('메뉴 4')">메뉴 4</li>
+            <li onclick="toggleSubMenu('submenu1')">WEB</li>
+            <ul id="submenu1" class="submenu">
+                <li onclick="loadPage('1.html')">1. HTML</li>
+                <li onclick="loadPage('2.html')">2. CSS</li>
+                <li onclick="loadPage('3.html')">3. JavaScript</li>
+            </ul>
+            <li onclick="showContent('메뉴 2')">HTML</li>
+            <li onclick="showContent('메뉴 3')">메뉴</li>
+            <li onclick="showContent('메뉴 4')">메뉴</li>
+            <li onclick="showContent('메뉴 5')">메뉴</li>
+            <li onclick="showContent('메뉴 6')">메뉴</li>
         </ul>
-    </div>
+
+    </aside>
+    <script>
+        // 하위 메뉴 토글 기능
+        function toggleSubMenu(subMenuId) {
+            const subMenu = document.getElementById(subMenuId);
+            if (subMenu.style.display === 'block') {
+                subMenu.style.display = 'none';
+            } else {
+                subMenu.style.display = 'block';
+            }
+        }
+
+        // 외부 HTML 파일 로드 기능
+        function loadPage(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('mainContent').innerHTML = data;
+                })
+                .catch(error => console.log('Error loading page:', error));
+        }
+    </script>
+
 
     <!-- 중단 바디 -->
     <div class="content" id="mainContent">
@@ -152,11 +85,14 @@
     <script>
         // 메뉴 열고 닫기 기능
         function toggleMenu() {
+            const mainContent = document.getElementById('mainContent');
             const sideMenu = document.getElementById('sideMenu');
             if (sideMenu.style.left === '0px') {
                 sideMenu.style.left = '-250px';
+                mainContent.style.paddingLeft = '0px';
             } else {
                 sideMenu.style.left = '0px';
+                mainContent.style.paddingLeft = '250px';
             }
         }
 
