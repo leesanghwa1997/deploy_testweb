@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12. 반응형 웹과 미디어 쿼리</title>
+    <link rel="stylesheet" href="css/HTML12.css">
+    <style>
+        body {
+            background: url(img/bg0.jpg) no-repeat fixed;
+            /* 기본 배경 이미지 지정 */
+            background-size: cover;
+        }
+
+        @media screen and (max-width:1024px) {
+            body {
+                background: url(img/bg1.jpg) no-repeat fixed;
+                /* 가로가 1024px 이하면 bg1.jpg 지정 */
+                background-size: cover;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            body {
+                background: url(img/bg2.jpg) no-repeat fixed;
+                /* 가로가 768px 이하면 bg2.jpg 지정 */
+                background-size: cover;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            body {
+                background: url(img/bg3.jpg) no-repeat fixed;
+                /* 가로가 320px 이하면 bg3.jpg 지정 */
+                background-size: cover;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>1. 반응 웹</h1>
+    <fieldset>
+        <p>vw: 1vw는 뷰포트 너비의 1%와 같습니다</p>
+        <p>vh: 1vh는 뷰포트 높이의 1%와 같습니다</p>
+        <p>vmin: 뷰포트의 너비와 높이중에서 작은 값의 1%와 같습니다</p>
+        <p>vmax: 뷰포트의 너비와 높이중에서 큰 값의 1%와 같습니다</p>
+    </fieldset>
+    <h2 id="h2_1">안녕하세요?</h2>
+    <fieldset>
+        <legend>
+            <h1>2. 미디어 쿼리</h1>
+        </legend>
+        <p>현재 화면 크기마다 백그라운드 이미지를 변경</p>
+        <p>가로 1024px,768px,320px 마다 변경</p>
+    </fieldset>
+    <h1>3. 플렉스 박스 레이아웃</h1>
+    <div class="container3" id="opt1">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container3" id="opt2">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container3" id="opt3">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container3" id="opt4">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container3" id="opt5">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <div class="container3" id="opt6">
+        <div class="box">
+            <p>1</p>
+        </div>
+        <div class="box">
+            <p>2</p>
+        </div>
+        <div class="box">
+            <p>3</p>
+        </div>
+        <div class="box">
+            <p>4</p>
+        </div>
+    </div>
+    <fieldset>
+        <legend>
+            <h1>4. CSS 그리드 레이아웃</h1>
+        </legend>
+        <div id="wrapper4">
+            <div class="box box1">box1</div>
+            <div class="box box2">box2</div>
+            <div class="box box3">box3</div>
+            <div class="box box4">box4</div>
+        </div>
+    </fieldset>
+
+</body>
+
+</html>

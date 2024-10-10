@@ -1,0 +1,93 @@
+/* 1. 변형*/
+#container1 {
+    width: 800px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.origin1 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    float: left;
+    margin: 40px;
+}
+
+.origin1>div {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+
+#movex1:hover {
+    transform: translateX(50px);
+    /* x축으로(가로) 50px 이동 */
+}
+
+#movey1:hover {
+    transform: translateY(20px);
+    /* y축으로(세로) 20px 이동 */
+}
+
+#movexy1:hover {
+    transform: translate(10px, 20px);
+    /* x축으로(가로) 10px, y축으로(세로) 20px 이동 */
+}
+
+/* 2.트렌지션*/
+.box2 {
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    background-color: #07f;
+    border: 1px solid #222;
+    transition-property: width, height;
+    /* 트랜지션 대상 - 너비, 높이 */
+    transition-duration: 2s, 1s;
+    /* 트랜지션 시간 - 2초, 1초 */
+}
+
+.box2:hover {
+    width: 200px;
+    height: 120px;
+}
+
+/* 3. 애니메이션 */
+.box3 {
+    width: 100px;
+    height: 100px;
+    margin: 60px auto;
+    animation: rotate 1.5s infinite, background 1.5s infinite alternate;
+}
+
+@keyframes rotate {
+
+    /* 0도 -> x축 -180도 회전 -> y축 -180도 회전 */
+    from {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+    }
+}
+
+@keyframes background {
+
+    /* 배경색 빨강 -> 초록 -> 파랑 */
+    from {
+        background-color: red;
+    }
+
+    50% {
+        background-color: green
+    }
+
+    to {
+        background-color: blue;
+    }
+}
