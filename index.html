@@ -40,11 +40,10 @@
                 <li onclick="loadPage('2.html')">2. CSS</li>
                 <li onclick="loadPage('3.html')">3. JavaScript</li>
             </ul>
-            <li onclick="showContent('메뉴 2')">HTML</li>
-            <li onclick="showContent('메뉴 3')">메뉴</li>
-            <li onclick="showContent('메뉴 4')">메뉴</li>
-            <li onclick="showContent('메뉴 5')">메뉴</li>
-            <li onclick="showContent('메뉴 6')">메뉴</li>
+            <li onclick="toggleSubMenu('submenu2')">HTML</li>
+            <ul id="submenu2" class="submenu">
+                <li onclick="loadPage('HTML10')">10. CSS 고급 선택자</li>
+            </ul>
         </ul>
 
     </aside>
@@ -83,7 +82,7 @@
     </footer>
 
     <script>
-        // 메뉴 열고 닫기 기능
+        // 메뉴1 열고 닫기 기능
         function toggleMenu() {
             const mainContent = document.getElementById('mainContent');
             const sideMenu = document.getElementById('sideMenu');
