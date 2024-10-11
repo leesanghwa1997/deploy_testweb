@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거 메뉴 추천</title>
+    <link rel="stylesheet" href="css/HTML15.css">
+    <script src="js/HTML15.js"></script>
+</head>
+
+<body>
+    <div class="menu-container">
+        <h1>맥도날드 메뉴 추천</h1>
+        
+        <!-- Icon bar with circular images -->
+        <div class="icon-bar">
+            <img src="img/bugerlogo.png" alt="맥도날드" class="menu-icon" onclick="selectMenu(this,'a')">
+            <img src="img/bugerkinglogo.png" alt="버거킹" class="menu-icon" onclick="selectMenu(this,'b')">
+        </div>
+
+        <div id="menu">
+            <div class="menuprofile">
+                <img src="img/bugerlogo.png" alt="버거 이미지" id="randomImage">
+                <p id="randomName" style="display: none;">이름:</p>
+                <p id="randomPrice" style="display: none;">가격:</p>
+            </div>
+            <ul>
+                <li onclick="RandomLunchImage()">뽑기</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/HTML15.js"></script>
+</body>
+
+</html>

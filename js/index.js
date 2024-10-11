@@ -53,12 +53,24 @@ function toggleSubMenu(subMenuId) {
     }
 }
 
+function loadScript(scriptUrl) {
+    const script = document.createElement('script');
+    script.src = scriptUrl;
+    script.async = false;  // 순차적으로 실행되도록 설정
+    document.body.appendChild(script);
+}
+
 // 하위 메뉴 클릭시 화면 로드
-function loadPage(page) {
+function loadPage(page, scriptUrl = null) {
     fetch(page)
         .then(response => response.text())
         .then(data => {
             document.getElementById('mainContent').innerHTML = data;
+
+            // 스크립트 URL이 있으면 로드
+            if (scriptUrl) {
+                loadScript(scriptUrl);
+            }
         })
         .catch(error => console.log('Error loading page:', error));
 }
