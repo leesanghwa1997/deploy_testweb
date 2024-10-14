@@ -49,7 +49,7 @@
         margin: 0;
     }
 
-    #menu ul li {
+    #randomButton {
         width: 200px;
         padding: 10px;
         cursor: pointer;
@@ -61,8 +61,44 @@
         transition: background-color 0.3s;
     }
 
-    #menu ul li:hover {
+    #randomButton:hover {
         background-color: #777;
+    }
+
+    #menuAddButton {
+        width: 200px;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+        border: 1px solid #555;
+        border-radius: 20px;
+        background-color: white;
+        color: black;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+    }
+
+    #menuAddButton:hover {
+        color: white;
+        background-color: blue;
+    }
+
+    #menuDeleteButton {
+        width: 200px;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+        border: 1px solid #555;
+        border-radius: 20px;
+        background-color: white;
+        color: black;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+    }
+
+    #menuDeleteButton:hover {
+        color: white;
+        background-color: red;
     }
 
     .menu-container {
@@ -80,6 +116,7 @@
     .menu-icon {
         width: 80px;
         height: 80px;
+        border: 1px solid whitesmoke;
         border-radius: 50%;
         margin: 0 10px;
         cursor: pointer;
@@ -93,4 +130,24 @@
     .menuprofile img {
         width: 150px;
         height: 150px;
+    }
+
+    .addmenu-container {
+        display: flex; /* Flexbox 활성화 */
+        align-items: center; /* 수직 중앙 정렬 */
+    }
+
+    .addmenu-icon {
+        width: 50px; /* 아이콘 크기 조정 */
+        height: 50px; /* 아이콘 크기 조정 */
+        margin-right: 10px; /* 아이콘과 입력 필드 사이의 여백 */
+    }
+
+    .addinput-container {
+        flex: 1; /* 입력 필드가 남은 공간을 차지하도록 설정 */
+    }
+
+    input {
+        width: 100%; /* 입력 필드 너비를 100%로 설정 */
+        margin-bottom: 10px; /* 아래 여백 추가 */
     }

@@ -11,23 +11,35 @@
 
 <body>
     <div class="menu-container">
-        <h1>맥도날드 메뉴 추천</h1>
-        
+        <h1>햄버거 메뉴 추천</h1>
+
         <!-- Icon bar with circular images -->
         <div class="icon-bar">
             <img src="img/bugerlogo.png" alt="맥도날드" class="menu-icon" onclick="selectMenu(this,'a')">
             <img src="img/bugerkinglogo.png" alt="버거킹" class="menu-icon" onclick="selectMenu(this,'b')">
+            <img src="img/plusIcon.png" alt="" class="menu-icon" onclick="selectMenu(this,'p')">
         </div>
 
         <div id="menu">
             <div class="menuprofile">
-                <img src="img/bugerlogo.png" alt="버거 이미지" id="randomImage">
+                <img src="img/bugerlogo.png" alt="버거 이미지" id="randomImage" style="display: none;">
                 <p id="randomName" style="display: none;">이름:</p>
                 <p id="randomPrice" style="display: none;">가격:</p>
             </div>
             <ul>
-                <li onclick="RandomLunchImage()">뽑기</li>
+                <li id="randomButton" onclick="RandomLunchImage()">뽑기</li>
+                <li id="menuAddButton" style="display: none;" onclick="MenuAdd()">메뉴 추가</li>
+                <li id="menuDeleteButton" style="display: none;" onclick="MenuDelete()">메뉴 삭제</li>
             </ul>
+        </div>
+        <div id="menuAddDiv" style="display: none;">
+            <div class="addmenu-container">
+                <img src="img/plusIcon.png" alt="" class="addmenu-icon" onclick="selectMenu(this,'p')">
+                <div class="addinput-container">
+                    <input type="text" placeholder="메뉴를 입력하세요">
+                    <input type="text" placeholder="가격을 입력하세요">
+                </div>
+            </div>
         </div>
     </div>
 

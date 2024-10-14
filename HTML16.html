@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16. 자바스크립트와 객체</title>
+    <style>
+        mark::before {
+            content: attr(data-number);
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <h3>객체(object)란?</h3>
+        <li>프로그램에서 인식할 수 있는 모든 대상</li>
+        <li>데이터를 저장하고 처리하는 기본단위</li>
+    </ul>
+    <ul>
+        <h3>객체의 인스턴스 만들기</h3>
+        <li>객체는 객체 자체가 아니라 인스턴스 형태로 만들어서 사용</li>
+        <li>인스턴스: 객체를 틀처럼 사용해서 같은 모양으로 찍어낸 것</li>
+        <li>new 객체명</li>
+        <p>코드1)<br>
+            var now = new Date();<br>
+            document.write("현재 시각은"+now);</p>
+    </ul>
+    <fieldset>
+        <legend>코드1 실행</legend>
+        <script>
+            var now = new Date();
+            document.write("현재 시각은" + now);
+        </script>
+    </fieldset>
+    <ul>
+        <h3>프로퍼티(property)와 메서드(method)</h3>
+        <li>프로퍼티: 객체의 특징이나 속성</li>
+        <li>메서드: 객체에서 할 수 있는 동작</li>
+        <p>코드2)<br>
+            var <mark data-number="2">now</mark> = <mark data-number="1">new Date();</mark><br>
+            document.write("현재 시각은"+ <mark data-number="3">now.toLocaleString()</mark>);<br></p>
+        1) Date 객체의 인스턴스를 만든다.<br>
+        2) now 변수에 저장<br>
+        3)Date 객체의 메서드 사용
+    </ul>
+    <ul>
+        <h3>배열 만들기-Array객체</h3>
+        <p>코드3)<br>
+            var numbers = ["one", "two", "three", "four"];<br>
+            for(i = 0; i < <mark data-number="1">numbers.length</mark>; i++) {<br>
+                document.write(numbers[i]+" ");</li>
+                }<br></p>
+        1)배열명.length 프로퍼티를 작성
+    </ul>
+    <fieldset>
+        <legend>코드3 실행</legend>
+        <script>
+            var numbers = ["one", "two", "three", "four"];
+            for (i = 0; i < numbers.length; i++) {
+                document.write(numbers[i] + " ");
+            }
+        </script>
+    </fieldset>
+    <ul>
+        <h3>Array객체의 메서드</h3>
+        <p>코드4)br
+            var nums = [1, 2, 3];<br>
+            var chars = ["a", "b", "c", "d"];</p>
+        <li>두개의 배열 합치기(concat)</li>
+        <p>var numsChars = nums.concat(chars);<br>
+            var charsNums = chars.concat(nums);<br>
+            document.write("[concat]");<br>
+            document.write("nums에 chars 합치면 : ", numsChars, "<br> chars에 nums 합치면 : ", charsNums);<br></p>
+        <li>배열 내의 요소 합치기(join)</li>
+        <p>var string1 = nums.join();<br>
+            document.write("[join]");<br>
+            document.write("구분자 없이 : ", string1);<br>
+            var string2 = chars.join('/');<br>
+            document.write("/ 구분자 지정 : ", string2);<br></p>
+        <li>요소 추가(push)</li>
+        <p>var ret1 = nums.push(4, 5); // 배열 끝에 추가<br>
+            document.write("[push]");<br>
+            document.write("length : ", ret1, " | 배열 : ", nums);<br>
+            var ret2 = nums.unshift(0); // 배열 앞에 추가<br>
+            document.write("length : ", ret2, " | 배열 : ", nums);</p>
+        <li>요소 삭제(pop)</li>
+        <p>var popped1 = chars.pop(); // 마지막 요소 꺼냄<br>
+            document.write("[pop]");<br>
+            document.write("꺼낸 요소 : ", popped1, " | 배열 : ", chars);<br>
+            var popped2 = chars.shift(); // 첫번째 요소 꺼냄<br>
+            document.write("꺼낸 요소 : ", popped2, " | 배열 : ", chars);<br></p>
+    </ul>
+    <fieldset>
+        <legend>코드4 실행</legend>
+        <script>
+            var nums = [1, 2, 3];
+            var chars = ["a", "b", "c", "d"];
+
+            // 두 개의 배열 합치기
+            var numsChars = nums.concat(chars);
+            var charsNums = chars.concat(nums);
+            document.write("[concat]<br>");
+            document.write("nums에 chars 합치면 : ", numsChars, "<br> chars에 nums 합치면 : ", charsNums);
+            document.write("<hr>");
+
+            // 배열 내의 요소 합치기
+            var string1 = nums.join();
+            document.write("[join]<br>");
+            document.write("구분자 없이 : ", string1);
+            document.write("<br>");
+            var string2 = chars.join('/');
+            document.write("/ 구분자 지정 : ", string2);
+            document.write("<hr>");
+
+            // 요소 추가 - 새로운 length 값 반환
+            var ret1 = nums.push(4, 5);  // 배열 끝에 추가
+            document.write("[push]<br>");
+            document.write("length : ", ret1, " | 배열 : ", nums);
+            document.write("<br>");
+            var ret2 = nums.unshift(0);  // 배열 앞에 추가
+            document.write("length : ", ret2, " | 배열 : ", nums);
+            document.write("<hr>");
+
+            // 요소 추출 - 꺼낸 요소 반환
+            var popped1 = chars.pop(); // 마지막 요소 꺼냄
+            document.write("[pop]<br>");
+            document.write("꺼낸 요소 : ", popped1, " | 배열 : ", chars);
+            document.write("<br>");
+            var popped2 = chars.shift(); // 첫번째 요소 꺼냄
+            document.write("꺼낸 요소 : ", popped2, " | 배열 : ", chars);
+            document.write("<hr>");
+        </script>
+    </fieldset>
+</body>
+
+</html>
