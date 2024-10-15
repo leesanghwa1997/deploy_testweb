@@ -27,7 +27,7 @@
                 <p id="randomPrice" style="display: none;">가격:</p>
             </div>
             <ul>
-                <li id="randomButton" onclick="RandomLunchImage()">뽑기</li>
+                <li id="randomButton" onclick="RandomLunchImage()" style="display: none;">뽑기</li>
                 <li id="menuAddButton" style="display: none;" onclick="MenuAdd()">메뉴 추가</li>
                 <li id="menuDeleteButton" style="display: none;" onclick="MenuDelete()">메뉴 삭제</li>
             </ul>
@@ -39,6 +39,7 @@
                     <input type="text" placeholder="메뉴를 입력하세요">
                     <input type="text" placeholder="가격을 입력하세요">
                 </div>
+                <input type="button" onclick="AddButton()">
             </div>
         </div>
     </div>

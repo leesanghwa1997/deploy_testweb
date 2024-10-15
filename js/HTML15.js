@@ -1,3 +1,13 @@
+//초기 스타일
+function defaultstyle() {
+    document.getElementById('randomButton').style.display = 'none';
+    document.getElementById('randomName').style.display = 'none';
+    document.getElementById('randomPrice').style.display = 'none';
+    document.getElementById('randomImage').style.display = 'none';
+    document.getElementById('menuAddButton').style.display = 'none';
+    document.getElementById('menuDeleteButton').style.display = 'none';
+}
+
 // 메뉴 객체 배열
 const menuItems1 = [
     { image: 'img/buger1.png', name: '1955 버거', price: '1,000' },
@@ -39,6 +49,7 @@ function selectMenu(icon, menuType) {
     document.getElementById('menuDeleteButton').style.display = 'none';
 
     //가게사진과 메뉴 추가버튼을 보이게 함
+    document.getElementById('randomButton').style.display = 'block';
     document.getElementById('randomImage').style.display = 'block';
     document.getElementById('menuAddButton').style.display = 'block';
 }
@@ -53,8 +64,15 @@ function RandomLunchImage() {
             break;
         case "p": menuItems = null;
             break;
-        default: menuItems = menuItems1;
-            break;
+        // default: menuItems = menuItems1;
+        //     break;
+    }
+
+    console.log(menuItems.length);
+
+    if (menuItems.length === 0) {
+        alert('메뉴가 없습니다.');
+        defaultstyle();
     }
 
     const randomIndex = Math.floor(Math.random() * menuItems.length);
@@ -68,15 +86,56 @@ function RandomLunchImage() {
     document.getElementById('randomPrice').style.display = 'block';
     document.getElementById('menuDeleteButton').style.display = 'block';
 }
-
+//메뉴 추가
 function MenuAdd() {
     if (document.getElementById('menuAddDiv').style.display === 'none') {
         document.getElementById('menuAddDiv').style.display = 'block';
         document.getElementById('menuAddButton').style.backgroundColor = 'blue';
     }
-    else{
+    else {
         document.getElementById('menuAddDiv').style.display = 'none';
         document.getElementById('menuAddButton').style.backgroundColor = 'white';
     }
 
 }
+
+function MenuDelete() {
+    // 현재 표시된 이미지의 src 가져오기
+    const currentImageSrc = document.getElementById('randomImage').src;
+    console.log("현재 이미지 src:", currentImageSrc); // 현재 이미지 src 콘솔 출력
+
+    // 이미지 경로에서 파일명만 추출 (예: 'buger1.png')
+    const currentImageFileName = currentImageSrc.split('/').pop();
+    console.log("현재 이미지 파일명:", currentImageFileName); // 파일명만 콘솔 출력
+
+    // 삭제할 메뉴가 있는 배열 선택
+    let menuItems;
+    switch (selectMenuType) {
+        case "a":
+            menuItems = menuItems1;
+            break;
+        case "b":
+            menuItems = menuItems2;
+            break;
+        default:
+            return; // 메뉴가 선택되지 않은 경우 함수 종료
+    }
+
+    // 배열에서 파일명으로 비교하여 해당 메뉴의 인덱스 찾기
+    const index = menuItems.findIndex(menu => menu.image.split('/').pop() === currentImageFileName);
+    console.log("삭제할 메뉴의 인덱스:", index); // 찾은 인덱스 콘솔 출력
+
+    if (index !== -1) {
+        console.log("삭제 전 메뉴 배열:", menuItems); // 삭제 전 배열 상태 콘솔 출력
+        menuItems.splice(index, 1); // 메뉴 삭제
+        console.log("삭제 후 메뉴 배열:", menuItems); // 삭제 후 배열 상태 콘솔 출력
+        alert('메뉴가 삭제되었습니다.');
+
+        RandomLunchImage();
+    } else {
+        console.log("삭제할 메뉴를 찾을 수 없음");
+        alert('삭제할 메뉴가 없습니다.');
+    }
+}
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery 준비물,cdn, 서버받기 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<script>
+    // html 문서 로드후 자바스크립트 작동
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("p").hide();
+        });
+    });
+</script>
+</head>
+
+<body>
+    <p>메시지 : 제이쿼리를 공부하고 있습니다.</p>
+    <button>메시지 삭제</button>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+.headerMain {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid gray;
+}
+
+.headerMain ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.headerMain ul li {
+    margin: 15px;
+}
+
+.headerMain ul li:hover {
+    background-color: aliceblue;
+    font-weight: bolder;
+}
+
+.headerButtons input {
+    margin: 10px;
+}
