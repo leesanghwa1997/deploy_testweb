@@ -151,3 +151,8 @@
         width: 100%; /* 입력 필드 너비를 100%로 설정 */
         margin-bottom: 10px; /* 아래 여백 추가 */
     }
+
+    #menuAddDiv{
+        width: 100%;
+        height: 100px;
+    }
