@@ -6,84 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>피그마 메인</title>
     <link rel="stylesheet" href="css/FigmaMain.css">
+    <script src="js/FigmaMain.js"></script>
 </head>
 
 <body>
     <!-- 헤더 -->
     <header class="headerMain">
-        <img src="" alt="">
+        <img src="img/travellogo.png" alt="">
         <ul>
-            <li>Products</li>
-            <li>Solutions</li>
-            <li>Community</li>
-            <li>Resources</li>
-            <li>Pricing</li>
-            <li>Contact</li>
+            <li>Best</li>
+            <li>Overseas travel</li>
+            <li>Aviation</li>
+            <li>hotel</li>
+            <li>Fligt+Hotel</li>
+            <li>Tours/Tickets</li>
         </ul>
         <div class="headerButtons">
-            <input type="button" value="Sign in">
-            <input type="button" value="Login">
+            <input type="button" value="Sign in" id="signInBtn" onclick="signin()">
+            <input type="button" value="Login" id="loginBtn" onclick="login()">
         </div>
 
     </header>
+    <!-- 메인 -->
     <main>
-        <section>
-            <h1>Title</h1>
-            <h2>Subtitle</h2>
-            <input type="button" value="button">
-            <input type="button" value="button">
+        <!-- 섹션1 -->
+        <section class="section1" id="sectionBackColor">
+            <div class="section1Hs">
+                <h1 id="travelNameKR">추천</h1>
+                <h2 id="travelNameEn">recommendations</h2>
+            </div>
+            <div class="section1Buttons">
+                <input type="button" value="해외" id="colorChangeBtn1" onclick="changeBackgroundImage1()">
+                <input type="button" value="국내" id="colorChangeBtn2" onclick="changeBackgroundImage2()">
+            </div>
         </section>
-        <section><img src="" alt=""></section>
-        <section>
-            <h3>Heading</h3>
-            <h3>Subheading</h3>
-            <div>
-                <div>
-                    <h3>Quote</h3>
-                    <img src="" alt="">
-                    <p>Title</p>
-                    <p>description</p>
+        <!-- 섹션2 -->
+        <section class="section2">
+            <div class="section2Div">
+                <img src="img/travel.jpg" alt="" id="section2Img">
+            </div>
+        </section>
+        <!-- 섹션3 -->
+        <section class="section3">
+            <div class="section3Hs">
+                <h1>해외 여행</h1>
+                <h2>Overseas travel</h2>
+            </div>
+            <div class="section3Divs">
+                <div class="section3Div" id="travel1" onclick="changeImage('img/travel1.jpg', 'travel1')">
+                    <h1>튀르키예</h1>
+                    <img src="img/travel1.jpg" alt="">
+                    <p><strong>2,990,000원</strong></p>
+                    <p>현지 국내선 2회 탑승으로 편안한 여정</p>
                 </div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="section3Div" id="travel2" onclick="changeImage('img/travel2.jpg', 'travel2')">
+                    <h1>보라카이</h1>
+                    <img src="img/travel2.jpg" alt="">
+                    <p><strong>370,000원</strong></p>
+                    <p>가성비 좋은 보라카이 준특급 리조트</p>
+                </div>
+                <div class="section3Div" id="travel3"onclick="changeImage('img/travel3.png', 'travel3')">
+                    <h1>규슈</h1>
+                    <img src="img/travel3.png" alt="">
+                    <p><strong>429,000원</strong></p>
+                    <p>감성가득 근교도시 사가, 게요리포함 뷔페</p>
+                </div>
+                <div class="section3Div" id="travel4" onclick="changeImage('img/travel4.jpg', 'travel4')">
+                    <h1>대만</h1>
+                    <img src="img/travel4.jpg" alt="">
+                    <p><strong>583,000원</strong></p>
+                    <p>영화 속 명소가 포함을 느낄 수 있다.</p>
+                </div>
+                <div class="section3Div" id="travel5" onclick="changeImage('img/travel5.jpg', 'travel5')">
+                    <h1>시드니</h1>
+                    <img src="img/travel5.jpg" alt="">
+                    <p><strong>1,159,000원</strong></p>
+                    <p>호주하면 시드니!매년 사랑받는 베스트 상품</p>
+                </div>
+                <div class="section3Div" id="travel6" onclick="changeImage('img/travel6.jpg', 'travel6')">
+                    <h1>뉴질랜드</h1>
+                    <img src="img/travel6.jpg" alt="">
+                    <p><strong>2,890,000원</strong></p>
+                    <p>온천욕으로 유명한 로토루아 휴양</p>
+                </div>
             </div>
         </section>
     </main>
+    <!-- 푸터 -->
     <footer>
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <h3>Use cases</h3>
+            <li>UI design</li>
+            <li>UX design</li>
+            <li>Wireframing</li>
+            <li>Diagramming</li>
+            <li>Braninstorming</li>
+            <li>Online whiteboard</li>
+            <li>Team collaboration</li>
         </ul>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <h3>Explore</h3>
+            <li>Design</li>
+            <li>Prototyping</li>
+            <li>Development features</li>
+            <li>Design systems</li>
+            <li>Collaboration features</li>
+            <li>Design process</li>
+            <li>FigJam</li>
         </ul>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <h3>Resources</h3>
+            <li>Blog</li>
+            <li>Best practices</li>
+            <li>Colors</li>
+            <li>Color wheel</li>
+            <li>Support</li>
+            <li>Developers</li>
+            <li>Resource library</li>
         </ul>
     </footer>
 </body>
